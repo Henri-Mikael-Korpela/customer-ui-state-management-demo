@@ -11,3 +11,9 @@ RUN apt install -y nodejs
 
 # Ensure correct NodeJS version (20) is installed
 RUN node -v | grep "v20" || exit 1
+
+# Set the working directory to /app, which is to include frontend source code
+WORKDIR /app
+
+# Expose port 5173 for Vite development server
+EXPOSE 5173
