@@ -31,7 +31,9 @@ function PastryListCard({ description, imageUrl, name }: PastryListCardParams) {
 
   return (
     <div className="PastryListCard">
-      <div className="PastryListCard-image" style={imageStyle}></div>
+      <div className="PastryListCard-image-container">
+        <div className="PastryListCard-image" style={imageStyle}></div>
+      </div>
       <div className="PastryListCard-info">
         <h2>{name}</h2>
         <p>{description}</p>
