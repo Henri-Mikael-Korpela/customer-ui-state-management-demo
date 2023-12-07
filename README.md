@@ -31,4 +31,4 @@ npm run dev
 ## Progress
 - Set up Dockerfile for NodeJS v20 (28 min)
 - Create Vite app with React, expose port 5173 for development, manage to display dev server example in the browser (12 min)
-- Configure frontendend Dockerfile better, add setup instructions (~25 min)
+- Configure frontend Dockerfile better, add setup instructions (~25 min)
