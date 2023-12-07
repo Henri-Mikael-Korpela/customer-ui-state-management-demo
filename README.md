@@ -34,3 +34,4 @@ npm run dev
 - Configure frontend Dockerfile better, add setup instructions (~25 min)
 - Implement a basic listing of different pastries with image, name and description (54 min)
 - Add image zoom effect on pastry card hover (6 min)
+- Add React Router, set up path to root component (App) (20 min)
