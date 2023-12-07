@@ -33,3 +33,4 @@ npm run dev
 - Create Vite app with React, expose port 5173 for development, manage to display dev server example in the browser (12 min)
 - Configure frontend Dockerfile better, add setup instructions (~25 min)
 - Implement a basic listing of different pastries with image, name and description (54 min)
+- Add image zoom effect on pastry card hover (6 min)
