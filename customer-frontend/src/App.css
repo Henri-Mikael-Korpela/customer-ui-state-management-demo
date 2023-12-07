@@ -31,6 +31,7 @@
   border-radius:8px;
   box-sizing: border-box;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  cursor:pointer;
   display:grid;
   grid-template-columns: 33% 2vw auto;
   margin-bottom:2vh;
@@ -74,4 +75,7 @@
   font-size:16px;
   font-weight: 400;
   margin:0;
+}
+.PastryListCard:hover .PastryListCard-info > p {
+  color:black;
 }
