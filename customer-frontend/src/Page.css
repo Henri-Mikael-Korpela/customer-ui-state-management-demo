@@ -1,0 +1,7 @@
+.Page-container{
+    margin-top:calc(80px + 2vh);
+    margin-left:auto;
+    margin-right:auto;
+    width: 80vw;
+    max-width:720px;
+  }

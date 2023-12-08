@@ -1,0 +1,16 @@
+.Navbar{
+    background:#d5453d;
+    height:80px;
+    left:0;
+    position:fixed;
+    top:0;
+    width:100vw;
+  }
+  .Navbar-title{
+    color:white;
+    font-family: 'Hedvig Letters Serif', serif;
+    text-align:center;
+    line-height:80px;
+    margin:0;
+    font-size:32px;
+  }
