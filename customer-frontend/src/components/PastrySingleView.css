@@ -15,3 +15,9 @@
 	letter-spacing: 0.5px;
 	margin:0;
 }
+.PastrySingleView-rating {
+	border:1px solid black;
+	border-radius: 8px;
+	margin-top: 2vh;
+	padding: 1vh 2vw;
+}

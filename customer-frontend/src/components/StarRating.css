@@ -1,0 +1,11 @@
+.StarRating-container {
+    position:relative;
+}
+.StarRating-rating-container{
+    position:absolute;
+    width:100%;
+}
+.StarRating-star {
+    cursor:pointer;
+    display:inline-block;
+}

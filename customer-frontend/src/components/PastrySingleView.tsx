@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../state_management";
 import { Page } from "./Page";
 import "./PastrySingleView.css";
+import { StarRating } from "./StarRating";
 
 export function PastrySingleView() {
     const { pastryId } = useParams<{ pastryId: string }>();
@@ -30,6 +31,11 @@ export function PastrySingleView() {
                     <h1>{pastry.name}</h1>
                     <img className="PastrySingleView-image" src={pastry.imageUrl} alt={pastry.name} />
                     <p className="PastrySingleView-description">{pastry.description}</p>
+
+                    <div className="PastrySingleView-rating">
+                        <p className="PastrySingleView-description">Rate this recipe:</p>
+                        <StarRating />
+                    </div>
                 </>
             }
         </Page>
