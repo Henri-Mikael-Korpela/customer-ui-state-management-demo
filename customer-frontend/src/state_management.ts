@@ -1,6 +1,6 @@
-import { PayloadAction, configureStore, createSlice } from "@reduxjs/toolkit";
-/* import buttermilkCheeseCakeImage from "./assets/40214-piimajuustokakku-800x534.jpeg";
-import blueberryCheeseCakeImage from "./assets/41100-mustikkajuustokakku-800x534.jpeg"; */
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+import buttermilkCheeseCakeImage from "./assets/40214-piimajuustokakku-800x534.jpeg";
+import blueberryCheeseCakeImage from "./assets/41100-mustikkajuustokakku-800x534.jpeg";
 
 export type Pastry = {
     id: number;
@@ -9,7 +9,11 @@ export type Pastry = {
     imageUrl: string;
 };
 
-/* const initialState2 = {
+export type PastriesState = {
+    pastries: Pastry[];
+}
+
+const initialState: PastriesState = {
     pastries: [
         {
             id: 100,
@@ -23,40 +27,22 @@ export type Pastry = {
             description: "Blueberry cheesecake is just as much a casual summer party treat as a festive Independence Day cake. If you want, you can marbleize the filling as per the instructions with blueberry puree or mix it completely with the cream cheese filling, which will make the cake a beautiful purple.",
             imageUrl: blueberryCheeseCakeImage
         }
-    ] as Pastry[],
-}; */
-
-export type CounterState = {
-    value: number;
-}
-
-const initialState: CounterState = {
-    value: 0,
+    ],
 };
 
-export const counterSlice = createSlice({
-    name: "counter",
-    initialState,
-    reducers: {
-        increment: (state) => {
-            state.value += 1;
-        },
-        decrement: (state) => {
-            state.value -= 1;
-        },
-        incrementByAmount: (state, action: PayloadAction<number>) => {
-            state.value += action.payload;
-        }
-    }
-})
+const pastriesSliceName = "pastriesIndex";
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const pastriesSlice = createSlice({
+    name: pastriesSliceName,
+    initialState,
+    reducers: {}
+})
 
 export const store = configureStore({
     reducer: {
-        counter: counterSlice.reducer
+        [pastriesSliceName]: pastriesSlice.reducer
     },
 });
 
-export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
