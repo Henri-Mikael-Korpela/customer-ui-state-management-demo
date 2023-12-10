@@ -58,3 +58,6 @@
 .PastryListCard:hover .PastryListCard-info > p {
 	color:black;
 }
+.PastryListCard-rating-description {
+	font-style:italic;
+}

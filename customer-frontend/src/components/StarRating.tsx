@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 import starIcon from "../assets/star.png";
 import "./StarRating.css";
 
@@ -17,24 +17,49 @@ const STAR_STYLES_PER_DISPLAY_STATE: Record<StarDisplayState, CSSProperties> = {
     }
 };
 
-export function StarRating() {
-    const [rating, setRating] = useState(0);
+type StarRatingParams = {
+    /**
+     * The callback to be called when the user clicks on one of the stars.
+     * 
+     * If the value is `undefined`, the stars selection is disabled.
+     */
+    onChange?: (rating: number) => void;
+    rating: number;
+    /**
+     * The size of the stars, in pixels.
+     */
+    starSize: number;
+}
 
+export function StarRating({ onChange, rating, starSize }: StarRatingParams) {
+    const starSizeStyle = {
+        width: starSize
+    };
     const starComponents = STAR_INDEXES.map(index => {
-        let style!: CSSProperties;
+        let displayStyle!: CSSProperties;
 
         if (index < rating) {
-            style = STAR_STYLES_PER_DISPLAY_STATE[StarDisplayState.Selected];
+            displayStyle = STAR_STYLES_PER_DISPLAY_STATE[StarDisplayState.Selected];
         }
         else {
-            style = STAR_STYLES_PER_DISPLAY_STATE[StarDisplayState.Unselected];
+            displayStyle = STAR_STYLES_PER_DISPLAY_STATE[StarDisplayState.Unselected];
         }
 
-        return <img className="StarRating-star" key={index}
-            src={starIcon}
-            alt="star"
-            style={{ ...style, width: 40 }}
-            onClick={() => setRating(index + 1)} />;
+        if (onChange !== undefined) {
+            return <img className="StarRating-star" key={index}
+                src={starIcon}
+                alt="star"
+                style={{ ...displayStyle, ...starSizeStyle }}
+                onClick={() => {
+                    onChange(index + 1);
+                }} />;
+        }
+        else {
+            return <img className="StarRating-star" key={index}
+                src={starIcon}
+                alt="star"
+                style={{ ...displayStyle, ...starSizeStyle }} />;
+        }
     });
 
     return (
@@ -44,6 +69,12 @@ export function StarRating() {
     );
 }
 
+/**
+ * Generates a range of numbers from `begin` (inclusive) to `end` (exclusive).
+ * The step is always +1.
+ * 
+ * @note There is no check to ensure that `begin` < `end`.
+ */
 function* generateRange(begin: number, end: number) {
     for (let i = begin; i < end; i++) {
         yield i;

@@ -40,3 +40,5 @@ npm run dev
 - Set up backend server in NodeJS with a Dockerfile (29 min)
 - Add path for serving pastry images (3 min)
 - Initialize app state with all pastries loaded from the backend (1h 45min)
+- Make star rating selector component (54 min)
+- Ensure star rating is saved into global state and that state is displayed on pastries index (30 min)

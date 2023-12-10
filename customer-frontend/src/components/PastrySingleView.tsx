@@ -1,6 +1,6 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { RootState } from "../state_management";
+import { RootState, setRatingForPastry } from "../state_management";
 import { Page } from "./Page";
 import "./PastrySingleView.css";
 import { StarRating } from "./StarRating";
@@ -23,6 +23,9 @@ export function PastrySingleView() {
 
         return pastries.find(pastry => pastry.id === pastryIdNum);
     });
+    const pastryRatings = useSelector((state: RootState) => state.pastriesIndex.pastryRatings);
+
+    const dispatch = useDispatch();
 
     return (
         <Page>
@@ -34,7 +37,13 @@ export function PastrySingleView() {
 
                     <div className="PastrySingleView-rating">
                         <p className="PastrySingleView-description">Rate this recipe:</p>
-                        <StarRating />
+                        <StarRating
+                            onChange={rating => dispatch(setRatingForPastry({
+                                pastryId: pastry.id,
+                                rating
+                            }))}
+                            rating={pastryRatings[pastry.id] ?? 0}
+                            starSize={40} />
                     </div>
                 </>
             }
