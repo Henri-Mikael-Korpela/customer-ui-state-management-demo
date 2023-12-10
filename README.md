@@ -36,3 +36,4 @@ npm run dev
 - Add image zoom effect on pastry card hover (6 min)
 - Add React Router, set up path to root component (App) (20 min)
 - Add a basic pastry detail page using React Redux (3h 48min)
+- Fix pastry image zoom bug which causes image to be displayed on top of the navbar (3 min)

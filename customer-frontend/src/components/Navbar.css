@@ -5,6 +5,7 @@
     position:fixed;
     top:0;
     width:100vw;
+    z-index:100; /* Ensure the navbar is on top of other elements */
   }
   .Navbar-title{
     color:white;
