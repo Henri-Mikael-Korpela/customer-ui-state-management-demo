@@ -14,13 +14,13 @@
 .PastryListCard:hover .PastryListCard-image {
 	transform: scale(1.1);
 }
-.PastryListCard-image-container{
+.PastryListCard-image-container {
 	aspect-ratio: 2/1;
 	border-radius:8px;
 	max-height:128px;
 	overflow: hidden;
 }
-.PastryListCard-image{
+.PastryListCard-image {
 	background-position: center;
 	background-size:cover;
 	transition:transform 0.2s ease-in-out;
@@ -28,13 +28,13 @@
 	height:100%;
 }
 
-@media screen and (max-width:720px){
-	.PastryListCard-image-container{
+@media screen and (max-width:720px) {
+	.PastryListCard-image-container {
 		aspect-ratio: 1/1;
 	}
 }
 
-.PastryListCard-info{
+.PastryListCard-info {
 	grid-column: 3 / 4;
 }
 .PastryListCard-info > h2 {

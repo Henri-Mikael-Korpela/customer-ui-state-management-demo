@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "../state_management";
 import { Page } from "./Page";
+import "./PastrySingleView.css";
 
 export function PastrySingleView() {
     const { pastryId } = useParams<{ pastryId: string }>();
@@ -9,19 +10,27 @@ export function PastrySingleView() {
     const pastry = useSelector((state: RootState) => {
         const pastries = state.pastriesIndex.pastries;
 
-        if (pastryId) {
-            const pastryIdNum = parseInt(pastryId);
-            return pastries.find(pastry => pastry.id === pastryIdNum)
-        }
-        else {
+        if (typeof pastryId !== "string") {
             return undefined;
         }
+
+        const pastryIdNum = parseInt(pastryId);
+
+        if (isNaN(pastryIdNum)) {
+            return undefined;
+        }
+
+        return pastries.find(pastry => pastry.id === pastryIdNum);
     });
 
     return (
         <Page>
             {pastry &&
-                <p><strong>{pastry.name}</strong> {pastry.description}</p>
+                <>
+                    <h1>{pastry.name}</h1>
+                    <img className="PastrySingleView-image" src={pastry.imageUrl} alt={pastry.name} />
+                    <p className="PastrySingleView-description">{pastry.description}</p>
+                </>
             }
         </Page>
     );

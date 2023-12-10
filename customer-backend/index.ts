@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 
 type Pastry = {
@@ -8,6 +9,8 @@ type Pastry = {
 };
 
 const app = express();
+
+app.use(cors());
 
 app.get('/pastries', (req, res) => {
     const pastries: Pastry[] = [

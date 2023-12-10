@@ -1,0 +1,17 @@
+.PastrySingleView-image {
+	border-radius:8px;
+    /*
+        Ensure that the image doesn't overflow its container,
+        but it can still remain smaller than its container.
+    */
+    max-width: 100%;
+    margin-bottom:2vh;
+}
+.PastrySingleView-description {
+	font-family: 'Hedvig Letters Serif', serif;
+	font-size:16px;
+	font-weight: 400;
+	line-height:28px;
+	letter-spacing: 0.5px;
+	margin:0;
+}

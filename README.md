@@ -39,3 +39,4 @@ npm run dev
 - Fix pastry image zoom bug which causes image to be displayed on top of the navbar (3 min)
 - Set up backend server in NodeJS with a Dockerfile (29 min)
 - Add path for serving pastry images (3 min)
+- Initialize app state with all pastries loaded from the backend (1h 45min)

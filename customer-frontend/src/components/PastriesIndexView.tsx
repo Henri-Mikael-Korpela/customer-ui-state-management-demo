@@ -7,10 +7,10 @@ import "./PastriesIndexView.css";
 type PastryListCardParams = {
 	id: number;
 	description: string;
-	imageUrl: string;
 	name: string;
+	imageUrl: string;
 };
-function PastryListCard({ description, id, imageUrl, name }: PastryListCardParams) {
+function PastryListCard({ description, id, name, imageUrl }: PastryListCardParams) {
 	const imageStyle = {
 		backgroundImage: `url('${imageUrl}')`,
 	};
@@ -35,7 +35,7 @@ function PastriesIndexView() {
 		<>
 			<Page>
 				<h1>Recipes made with love</h1>
-				<p className="description" >Here are some sweet baked goods to make you happy!</p>
+				<p className="description">Here are some sweet baked goods to make you happy!</p>
 
 				{pastries.map(pastry =>
 					<PastryListCard key={pastry.id} id={pastry.id} name={pastry.name} description={pastry.description} imageUrl={pastry.imageUrl} />
