@@ -24,6 +24,9 @@ type StarRatingParams = {
      * If the value is `undefined`, the stars selection is disabled.
      */
     onChange?: (rating: number) => void;
+    /**
+     * The rating of the pastry, from 0 to 5.
+     */
     rating: number;
     /**
      * The size of the stars, in pixels.
@@ -31,6 +34,9 @@ type StarRatingParams = {
     starSize: number;
 }
 
+/**
+ * A component that displays a rating as a row of stars.
+ */
 export function StarRating({ onChange, rating, starSize }: StarRatingParams) {
     const starSizeStyle = {
         width: starSize

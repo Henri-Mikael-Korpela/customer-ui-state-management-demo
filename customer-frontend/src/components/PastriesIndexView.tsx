@@ -1,3 +1,11 @@
+/**
+ * @file This file contains the component that displays the pastries index,
+ * but also the component that displays a single pastry in the pastries index in a card form.
+ * 
+ * I could have moved the `PastryListCard` component to its own file, but I decided to keep it here
+ * because it is only used in this file and the index component and the card component put together
+ * are not too complicated or too long to justify putting them in separate files.
+ */
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { RootState } from "../state_management";
@@ -9,6 +17,9 @@ type PastryListCardParams = {
 	id: number;
 	description: string;
 	name: string;
+	/**
+	 * The URL of the image of the pastry (that points to an image on the backend server).
+	 */
 	imageUrl: string;
 	/**
 	 * The rating of the pastry, from 0 to 5.
@@ -16,13 +27,22 @@ type PastryListCardParams = {
 	 */
 	rating: number | undefined;
 };
+/**
+ * Represents a card that displays a pastry in the pastries index.
+ */
 function PastryListCard({ description, id, name, imageUrl, rating }: PastryListCardParams) {
 	const imageStyle = {
 		backgroundImage: `url('${imageUrl}')`,
 	};
-	const ratingDescription = rating === undefined
-		? <>Not rated yet</>
-		: <>Your rating: <StarRating rating={rating} starSize={24} /></>;
+
+	let ratingDescription!: JSX.Element;
+
+	if (rating !== undefined) {
+		ratingDescription = <>Your rating: <StarRating rating={rating} starSize={24} /></>;
+	}
+	else {
+		ratingDescription = <>Not rated yet</>;
+	}
 
 	return (
 		<div className="PastryListCard">
@@ -38,6 +58,9 @@ function PastryListCard({ description, id, name, imageUrl, rating }: PastryListC
 	);
 }
 
+/**
+ * Represents the view component that displays the pastries index.
+ */
 function PastriesIndexView() {
 	const pastries = useSelector((state: RootState) => state.pastriesIndex.pastries);
 	const pastryRatings = useSelector((state: RootState) => state.pastriesIndex.pastryRatings);

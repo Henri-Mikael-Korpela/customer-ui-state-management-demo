@@ -5,7 +5,12 @@ import { Page } from "./Page";
 import "./PastrySingleView.css";
 import { StarRating } from "./StarRating";
 
+/**
+ * Represents the view component that displays a single pastry.
+ */
 export function PastrySingleView() {
+    // I could have set type for the params elsewhere and shared it with router path setup,
+    // but I did not have enough time to do that.
     const { pastryId } = useParams<{ pastryId: string }>();
 
     const pastry = useSelector((state: RootState) => {

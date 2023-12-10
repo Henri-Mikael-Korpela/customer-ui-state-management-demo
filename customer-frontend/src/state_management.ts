@@ -1,8 +1,13 @@
+/**
+ * @file This file contains the Redux store and related code.
+ * @note Naming of types, variables and functions could be improved upon.
+ * There was not enough time to think of better names and refactor.
+ */
 import { PayloadAction, configureStore, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Api } from "./Api";
 import { PastryToFrontend } from "./entities/Pastry";
 
-type PastriesState = {
+type MainState = {
     pastries: PastryToFrontend[];
     /**
      * Maps pastry IDs to ratings.
@@ -16,7 +21,7 @@ type PastryRating = {
 
 const PASTRIES_SLICE_NAME = "pastriesIndex";
 
-const initialState: PastriesState = {
+const initialState: MainState = {
     pastries: [],
     pastryRatings: {},
 };

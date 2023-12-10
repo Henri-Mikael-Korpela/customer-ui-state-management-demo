@@ -1,17 +1,17 @@
-.Navbar{
-    background:#d5453d;
-    height:80px;
-    left:0;
-    position:fixed;
-    top:0;
-    width:100vw;
-    z-index:100; /* Ensure the navbar is on top of other elements */
-  }
-  .Navbar-title{
-    color:white;
-    font-family: 'Hedvig Letters Serif', serif;
-    text-align:center;
-    line-height:80px;
-    margin:0;
-    font-size:32px;
-  }
+.Navbar {
+	background:#d5453d;
+	height:80px;
+	left:0;
+	position:fixed;
+	top:0;
+	width:100vw;
+	z-index:100; /* Ensure the navbar is on top of all other elements */
+}
+.Navbar-title {
+	color:white;
+	font-family: 'Hedvig Letters Serif', serif;
+	text-align:center;
+	line-height:80px;
+	margin:0;
+	font-size:32px;
+}
